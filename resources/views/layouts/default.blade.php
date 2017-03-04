@@ -13,7 +13,7 @@
     <!-- MetisMenu CSS -->
     <link href="{{ asset('vendor/metisMenu/metisMenu.min.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ asset('dist/css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('dist/css/sb-admin-2.min.css') }}?<?php echo time(); ?>" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="{{ asset('vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -24,13 +24,7 @@
     <![endif]-->
 </head>
 <body>
-
-<div class="container">
-    <div class="col-md-offset-1 col-md-10">
-        @include('shared.messages')
-    </div>
     @yield('content')
-</div>
 @yield('script')
 </body>
 </html>

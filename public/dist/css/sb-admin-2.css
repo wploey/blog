@@ -5,7 +5,7 @@ body {
   width: 100%;
 }
 #page-wrapper {
-  padding: 0 15px;
+  padding: 2px;
   min-height: 568px;
   background-color: white;
 }
@@ -13,7 +13,7 @@ body {
   #page-wrapper {
     position: inherit;
     margin: 0 0 0 250px;
-    padding: 0 30px;
+    padding: 20px;
     border-left: 1px solid #e7e7e7;
   }
 }
@@ -426,4 +426,10 @@ table.dataTable thead .sorting:after {
     border-right-width: 14px;
     border-left-width: 0;
   }
+}
+.btn-overwrite {
+  padding: 3px 32px;
+}
+.tc {
+  text-align: center;
 }

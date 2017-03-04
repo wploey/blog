@@ -7,10 +7,21 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Auth;
 use App\Models\User;
 
 class UsersController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        if (Auth::check()) {
+            return view('users.show', compact('user'));
+        }else{
+            return redirect()->route('login');
+        }
+    }
+
     //
     public function create(){
         return view('users.create');
@@ -34,7 +45,7 @@ class UsersController extends Controller
             'email' => $request->email,
             'password' => bcrypt($request->password),    
         ]);
-        session()->flash('success', '欢迎!');
+        Auth::login($user);
         return redirect()->route('users.show', [$user]);
     }
 }

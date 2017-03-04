@@ -90,7 +90,7 @@ gulp.task('copy', function() {
 })
 
 // Run everything
-gulp.task('default', ['minify-css', 'minify-js', 'copy']);
+gulp.task('run', ['minify-css', 'minify-js', 'copy']);
 
 // // Configure the browserSync task
 // gulp.task('browserSync', function() {
@@ -124,7 +124,7 @@ elixir(function(mix) {
 });
 
 // Minify JS
-gulp.task('minify-app-js', ['js'], function() {
+gulp.task('runjs', ['js'], function() {
     return gulp.src('public/assets/js/app.js')
         .pipe(uglify())
         .pipe(rename({ suffix: '.min' }))
