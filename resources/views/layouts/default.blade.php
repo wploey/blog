@@ -24,8 +24,13 @@
     <![endif]-->
 </head>
 <body>
-@yield('content')
 
+<div class="container">
+    <div class="col-md-offset-1 col-md-10">
+        @include('shared.messages')
+    </div>
+    @yield('content')
+</div>
 @yield('script')
 </body>
 </html>
